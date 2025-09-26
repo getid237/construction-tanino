@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Tanino - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 300px;
+            max-height: 150px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .free-estimate {
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .services {
+            margin-bottom: 50px;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .service-description {
+            color: #cccccc;
+            font-size: 1rem;
+        }
+
+        .gallery {
+            margin-bottom: 50px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #d4af37;
+            width: 40px;
+            text-align: center;
+        }
+
+        .director-name {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .director-title {
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .logo img {
+                max-width: 250px;
+                max-height: 120px;
+            }
+
+            .services-title,
+            .gallery-title,
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .free-estimate {
+                font-size: 1.1rem;
+                padding: 12px 25px;
+            }
+
+            .contact {
+                padding: 30px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                max-width: 200px;
+                max-height: 100px;
+            }
+
+            .services-title,
+            .gallery-title,
+            .contact-title {
+                font-size: 1.8rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .contact-item {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Animation pour l'entrée */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header fade-in">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Tanino Construction">
+            </div>
+            <div class="tagline">Construction & Béton - Excellence garantie</div>
+            <div class="free-estimate">✨ Estimation Gratuite ✨</div>
+        </header>
+
+        <!-- Services -->
+        <section class="services fade-in">
+            <h2 class="services-title">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="service-title">Travaux de Béton</h3>
+                    <p class="service-description">Tous types de travaux de béton pour vos projets résidentiels et commerciaux</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">Béton Structural</h3>
+                    <p class="service-description">Solutions structurelles robustes pour vos fondations et structures</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stairs"></i>
+                    </div>
+                    <h3 class="service-title">Balcons & Escaliers</h3>
+                    <p class="service-description">Conception et construction de balcons et escaliers en béton sur mesure</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery fade-in">
+            <h2 class="gallery-title">Nos Réalisations</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/img9.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img8.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img7.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img6.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img5.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img4.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img3.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.png" alt="Travaux de béton">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img1.png" alt="Travaux de béton">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact fade-in">
+            <h2 class="contact-title">Contactez-nous</h2>
+            <div class="director-name">Gaetan Gignac Perez</div>
+            <div class="director-title">Directeur des opérations</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <span>514 434 7341</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <span>Construction.tanino@gmail.com</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Effet de hover pour les cartes de service
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
